@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->softDeletes();
-            //$table->tinyInteger('is_admin')->unsigned();
+            $table->tinyInteger('is_admin')->unsigned();
             $table->string('name');
             $table->string('company')->nullable();
             $table->string('email')->unique();

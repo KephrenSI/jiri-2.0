@@ -1,10 +1,7 @@
 <?php
 
 return [
-<<<<<<< HEAD
 
-=======
->>>>>>> f0368d4f93009ac2471e7561833c53c241222d02
     /*
     |--------------------------------------------------------------------------
     | Validation Language Lines
@@ -45,21 +42,6 @@ return [
     'exists'               => 'Le champ :attribute sélectionné est invalide.',
     'file'                 => 'Le champ :attribute doit être un fichier.',
     'filled'               => 'Le champ :attribute doit avoir une valeur.',
-<<<<<<< HEAD
-=======
-    'gt'                   => [
-        'numeric' => 'La valeur de :attribute doit être supérieure à :value.',
-        'file'    => 'La taille du fichier de :attribute doit être supérieure à :value kilo-octets.',
-        'string'  => 'Le texte :attribute doit contenir plus de :value caractères.',
-        'array'   => 'Le tableau :attribute doit contenir plus de :value éléments.',
-    ],
-    'gte'                  => [
-        'numeric' => 'La valeur de :attribute doit être supérieure ou égale à :value.',
-        'file'    => 'La taille du fichier de :attribute doit être supérieure ou égale à :value kilo-octets.',
-        'string'  => 'Le texte :attribute doit contenir au moins :value caractères.',
-        'array'   => 'Le tableau :attribute doit contenir au moins :value éléments.',
-    ],
->>>>>>> f0368d4f93009ac2471e7561833c53c241222d02
     'image'                => 'Le champ :attribute doit être une image.',
     'in'                   => 'Le champ :attribute est invalide.',
     'in_array'             => "Le champ :attribute n'existe pas dans :other.",
@@ -68,21 +50,6 @@ return [
     'ipv4'                 => 'Le champ :attribute doit être une adresse IPv4 valide.',
     'ipv6'                 => 'Le champ :attribute doit être une adresse IPv6 valide.',
     'json'                 => 'Le champ :attribute doit être un document JSON valide.',
-<<<<<<< HEAD
-=======
-    'lt'                   => [
-        'numeric' => 'La valeur de :attribute doit être inférieure à :value.',
-        'file'    => 'La taille du fichier de :attribute doit être inférieure à :value kilo-octets.',
-        'string'  => 'Le texte :attribute doit contenir moins de :value caractères.',
-        'array'   => 'Le tableau :attribute doit contenir moins de :value éléments.',
-    ],
-    'lte'                  => [
-        'numeric' => 'La valeur de :attribute doit être inférieure ou égale à :value.',
-        'file'    => 'La taille du fichier de :attribute doit être inférieure ou égale à :value kilo-octets.',
-        'string'  => 'Le texte :attribute doit contenir au plus :value caractères.',
-        'array'   => 'Le tableau :attribute doit contenir au plus :value éléments.',
-    ],
->>>>>>> f0368d4f93009ac2471e7561833c53c241222d02
     'max'                  => [
         'numeric' => 'La valeur de :attribute ne peut être supérieure à :max.',
         'file'    => 'La taille du fichier de :attribute ne peut pas dépasser :max kilo-octets.',
@@ -98,10 +65,6 @@ return [
         'array'   => 'Le tableau :attribute doit contenir au moins :min éléments.',
     ],
     'not_in'               => "Le champ :attribute sélectionné n'est pas valide.",
-<<<<<<< HEAD
-=======
-    'not_regex'            => "Le format du champ :attribute n'est pas valide.",
->>>>>>> f0368d4f93009ac2471e7561833c53c241222d02
     'numeric'              => 'Le champ :attribute doit contenir un nombre.',
     'present'              => 'Le champ :attribute doit être présent.',
     'regex'                => 'Le format du champ :attribute est invalide.',
@@ -136,11 +99,7 @@ return [
     |
     */
 
-<<<<<<< HEAD
     'custom'               => [
-=======
-    'custom' => [
->>>>>>> f0368d4f93009ac2471e7561833c53c241222d02
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
@@ -157,11 +116,7 @@ return [
     |
     */
 
-<<<<<<< HEAD
     'attributes'           => [
-=======
-    'attributes' => [
->>>>>>> f0368d4f93009ac2471e7561833c53c241222d02
         'name'                  => 'nom',
         'username'              => "nom d'utilisateur",
         'email'                 => 'adresse courriel',
@@ -192,8 +147,5 @@ return [
         'available'             => 'disponible',
         'size'                  => 'taille',
     ],
-<<<<<<< HEAD
 
-=======
->>>>>>> f0368d4f93009ac2471e7561833c53c241222d02
 ];

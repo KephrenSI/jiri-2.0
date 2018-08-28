@@ -1,10 +1,7 @@
 <?php
 
 return [
-<<<<<<< HEAD
 
-=======
->>>>>>> f0368d4f93009ac2471e7561833c53c241222d02
     /*
     |--------------------------------------------------------------------------
     | Password Reminder Language Lines
@@ -21,8 +18,5 @@ return [
     'sent'     => 'Nous vous avons envoyé par courriel le lien de réinitialisation du mot de passe !',
     'token'    => "Ce jeton de réinitialisation du mot de passe n'est pas valide.",
     'user'     => "Aucun utilisateur n'a été trouvé avec cette adresse courriel.",
-<<<<<<< HEAD
 
-=======
->>>>>>> f0368d4f93009ac2471e7561833c53c241222d02
 ];

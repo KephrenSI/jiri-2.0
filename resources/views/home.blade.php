@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    Bonjour,
                 </div>
             </div>
         </div>
