@@ -23,7 +23,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 Route::get('/dashboard', 'DashboardController@main');
+=======
+
+>>>>>>> f0368d4f93009ac2471e7561833c53c241222d02
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

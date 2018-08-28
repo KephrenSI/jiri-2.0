@@ -1,7 +1,10 @@
 <?php
 
 return [
+<<<<<<< HEAD
 
+=======
+>>>>>>> f0368d4f93009ac2471e7561833c53c241222d02
     /*
     |--------------------------------------------------------------------------
     | Authentication Language Lines
@@ -15,5 +18,8 @@ return [
 
     'failed'   => 'Ces identifiants ne correspondent pas à nos enregistrements',
     'throttle' => 'Tentatives de connexion trop nombreuses. Veuillez essayer de nouveau dans :seconds secondes.',
+<<<<<<< HEAD
 
+=======
+>>>>>>> f0368d4f93009ac2471e7561833c53c241222d02
 ];
