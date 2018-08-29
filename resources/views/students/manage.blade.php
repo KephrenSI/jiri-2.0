@@ -43,15 +43,15 @@
         @endforeach
     </ul>
 
-    <h1>
-        Tous les jurys dans la db
-    </h1>
-    <ul>
-        @foreach ($studentAlls as $studentAll)
-            <li>
-                {{ $studentAll->name }}
-            </li>
-        @endforeach
+    {{--<h1>--}}
+        {{--Tous les jurys dans la db--}}
+    {{--</h1>--}}
+    {{--<ul>--}}
+        {{--@foreach ($studentAlls as $studentAll)--}}
+            {{--<li>--}}
+                {{--{{ $studentAll->name }}--}}
+            {{--</li>--}}
+        {{--@endforeach--}}
 
-    </ul>
+    {{--</ul>--}}
 @endsection

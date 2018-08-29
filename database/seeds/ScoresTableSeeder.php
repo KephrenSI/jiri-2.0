@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Score;
 
 class ScoresTableSeeder extends Seeder
 {
@@ -36,7 +37,7 @@ class ScoresTableSeeder extends Seeder
                             if ($table[$student_id][$j] === '') {
                                 $table[$student_id][$j] = null;
                             }
-                            \Jiri\Score::create([
+                            Score::create([
                                 'score' => $table[$student_id][$j],
                                 'meeting_id' => $meeting_id,
                                 'implementation_id' => $implementation_id,

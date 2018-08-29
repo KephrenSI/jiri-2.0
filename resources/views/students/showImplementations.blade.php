@@ -7,7 +7,7 @@
                     <li class="card">
                         <div class="card-block">
                             <h3 class="card-title">{{ $implementation->project->name }}</h3>
-                            <a class="link" href="{{ route('/implementations/evaluate/meeting', [$implementation, $meeting]) }}"></a>
+                            <a class="link" href="{{ route('/implementations/evaluate/meeting', [$implementation, $meeting]) }}">voir</a>
                         </div>
                     </li>
                 @endforeach
@@ -28,7 +28,7 @@
                 </div>
                 <div class="form-group">
                     <label for="general_comment">
-                        Cote
+                        Commentaire
                     </label>
                     <textarea class="form-control" id="general_comment" name="general_comment">{{ $meeting->general_comment }}</textarea>
                 </div>

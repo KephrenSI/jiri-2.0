@@ -38,10 +38,11 @@
 */
 
 Route::get('/', function () {
-    if(Auth::check())
-        return view('dashboard');
-    else
+    //if(Auth::check())
+      //  return view('dashboard');
+    //else
         return view('auth/login');
+    //return view('welcome');
 });
 
 Auth::routes();
@@ -49,7 +50,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Accueil
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard'); // Page d'accueil de l'admin
+//Route::get('/dashboard', 'DashboardController@index')->name('dashboard'); // Page d'accueil de l'admin
 
 // Étudients
 Route::get('/students/create', 'StudentsController@create'); // Page de création d'un élève

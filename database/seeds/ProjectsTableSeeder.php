@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Project;
 
 class ProjectsTableSeeder extends Seeder
 {
@@ -11,35 +12,35 @@ class ProjectsTableSeeder extends Seeder
      */
     public function run()
     {
-        \Jiri\Project::create([
+        Project::create([
             'name' => 'CV à la manière de…',
         ]);
-        \Jiri\Project::create([
+        Project::create([
             'name' => 'CSS Zen Garden',
         ]);
-        \Jiri\Project::create([
+        Project::create([
             'name' => 'Exposition d’un artiste',
         ]);
-        \Jiri\Project::create([
+        Project::create([
             'name' => 'Portfolio',
         ]);
-        \Jiri\Project::create([
+        Project::create([
             'name' => 'Mariam Faso',
         ]);
-        \Jiri\Project::create([
+        Project::create([
             'name' => 'Design Mobile Quick',
         ]);
-        \Jiri\Project::create([
+        Project::create([
             'name' => 'Centre de santé d’Angleur',
         ]);
-        \Jiri\Project::create([
+        Project::create([
             'name' => 'Espace P',
         ]);
-        \Jiri\Project::create([
+        Project::create([
             'name' => 'Pré-production du PFE',
         ]);
-        \Jiri\Project::create([
-            'name' => 'Jiri',
+        Project::create([
+            'name' => 'App',
         ]);
     }
 }

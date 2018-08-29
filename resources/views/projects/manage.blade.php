@@ -24,16 +24,16 @@
         @endforeach
     </ul>
 
-    <h1>
-        Tous les projets dans la db
-    </h1>
-    <ul>
-        @foreach ($projects as $project)
-            <li>
-                {{ $project->name }}
-            </li>
-        @endforeach
+    {{--<h1>--}}
+        {{--Tous les projets dans la db--}}
+    {{--</h1>--}}
+    {{--<ul>--}}
+        {{--@foreach ($projects as $project)--}}
+            {{--<li>--}}
+                {{--{{ $project->name }}--}}
+            {{--</li>--}}
+        {{--@endforeach--}}
 
-    </ul>
+    {{--</ul>--}}
 
 @endsection

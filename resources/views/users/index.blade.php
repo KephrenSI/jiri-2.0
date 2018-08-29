@@ -14,7 +14,7 @@
                 @else
                     <p class="card-text"><strong>Administrateur</strong> : non</p>
                 @endif
-                <a href="{{ url('/users/'.$user->id) }}" class="link"></a>
+                <a href="{{ url('/users/'.$user->id) }}" class="link">Voir</a>
             </div>
         </li>
     @endforeach

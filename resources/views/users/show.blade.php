@@ -27,12 +27,12 @@
             @foreach($participations as $participation)
                     <li class="card">
                         <h3 class="card-title">{{ $participation->event->course_name }}</h3>
-                        <a href="{{ url('/events/'.$participation->event->id) }}" class="link"></a>
+                        <a href="{{ url('/events/'.$participation->event->id) }}" class="link">Voir</a>
                     </li>
             @endforeach
             </ul>
         @else
-            Cet étudiant ne participe pas encore à un évènement
+            Cet utilisateur ne participe pas encore à un évènement
         @endif
     </div>
 

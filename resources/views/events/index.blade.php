@@ -9,7 +9,7 @@
                 <h3 class="card-title">{{$event->course_name}}</h3>
                 <p class="card-text"><strong>Année académique</strong> : {{$event->academic_year}}</p>
                 <p class="card-text"><strong>Session n°</strong>{{$event->exam_session}}</p>
-                <a href="{{ url('/events/'.$event->id) }}" class="link"></a>
+                <a href="{{ url('/events/'.$event->id) }}" class="link">Accéder</a>
             </div>
         </li>
     @endforeach

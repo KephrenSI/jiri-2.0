@@ -21,7 +21,7 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="list-group col-md-6">
+            <div class="list-group col-md-6" style="display: none">
                 <h3>
                     Liste des étudiants
                 </h3>

@@ -1,22 +1,22 @@
 <?php
 
-namespace Jiri;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Jiri\Meeting
+ * App\Meeting
  *
- * @property-read \Jiri\Event $event
- * @property-read \Illuminate\Database\Eloquent\Collection|\Jiri\Score[] $scores
- * @property-read \Jiri\Student $student
- * @property-read \Jiri\User $user
+ * @property-read \App\Event $event
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Score[] $scores
+ * @property-read \App\Student $student
+ * @property-read \App\User $user
  * @method static bool|null forceDelete()
- * @method static \Illuminate\Database\Query\Builder|\Jiri\Meeting onlyTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Meeting onlyTrashed()
  * @method static bool|null restore()
- * @method static \Illuminate\Database\Query\Builder|\Jiri\Meeting withTrashed()
- * @method static \Illuminate\Database\Query\Builder|\Jiri\Meeting withoutTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Meeting withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Meeting withoutTrashed()
  * @mixin \Eloquent
  * @property int $id
  * @property \Carbon\Carbon|null $created_at
@@ -28,16 +28,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $start_time
  * @property string|null $end_time
  * @property float|null $general_evaluation
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Meeting whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Meeting whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Meeting whereEndTime($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Meeting whereEventId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Meeting whereGeneralEvaluation($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Meeting whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Meeting whereStartTime($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Meeting whereStudentId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Meeting whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Meeting whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Meeting whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Meeting whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Meeting whereEndTime($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Meeting whereEventId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Meeting whereGeneralEvaluation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Meeting whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Meeting whereStartTime($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Meeting whereStudentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Meeting whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Meeting whereUserId($value)
  */
 class Meeting extends Model
 {
@@ -49,7 +49,12 @@ class Meeting extends Model
      */
     protected $fillable = [
         'start_time',
-        'end_time'
+        'end_time',
+        'general_evaluation',
+        'user_id',
+        'event_id',
+        'student_id',
+        'general_comment',
     ];
     protected $table = 'meetings';
 

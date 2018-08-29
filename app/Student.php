@@ -1,35 +1,35 @@
 <?php
 
-namespace Jiri;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Jiri\Student
+ * App\Student
  *
- * @property-read \Illuminate\Database\Eloquent\Collection|\Jiri\Implementation[] $implementations
- * @property-read \Illuminate\Database\Eloquent\Collection|\Jiri\Meeting[] $meetings
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Implementation[] $implementations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Meeting[] $meetings
  * @method static bool|null forceDelete()
- * @method static \Illuminate\Database\Query\Builder|\Jiri\Student onlyTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Student onlyTrashed()
  * @method static bool|null restore()
- * @method static \Illuminate\Database\Query\Builder|\Jiri\Student withTrashed()
- * @method static \Illuminate\Database\Query\Builder|\Jiri\Student withoutTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Student withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Student withoutTrashed()
  * @mixin \Eloquent
- * @property-read \Illuminate\Database\Eloquent\Collection|\Jiri\Performance[] $performances
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Performance[] $performances
  * @property int $id
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
  * @property \Carbon\Carbon|null $deleted_at
  * @property string $name
  * @property string $email
- * @property-read \Illuminate\Database\Eloquent\Collection|\Jiri\User[] $users
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Student whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Student whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Student whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Student whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Student whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Student whereUpdatedAt($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[] $users
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereUpdatedAt($value)
  */
 class Student extends Model
 {
@@ -40,7 +40,8 @@ class Student extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name',
+        'email',
     ];
     protected $table = 'students';
 

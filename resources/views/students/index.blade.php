@@ -8,7 +8,7 @@
                 <div class="card-block">
                     <h3 class="card-title">{{$student->name}}</h3>
                     <p class="card-text"><strong>Email</strong> : {{$student->email}}</p>
-                    <a href="{{ url('/students/'.$student->id) }}" class="link"></a>
+                    <a href="{{ url('/students/'.$student->id) }}" class="link">Voir</a>
                 </div>
             </li>
         @endforeach

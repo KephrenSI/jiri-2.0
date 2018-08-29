@@ -43,7 +43,7 @@
     @endif
 
 
-    <div class="">
+    <div>
         <h2>
             Meetings
         </h2>
@@ -55,7 +55,7 @@
                     <li class="card">
                         <div class="card-block">
                             <h3 class="card-title">{{ $meeting->student->name }}</h3>
-                            <a class="link" href="{{ route('/students/implementations/event', [$meeting->student, $event->id]) }}"></a>
+                            <a class="link" href="{{ route('/students/implementations/event', [$meeting->student, $event->id]) }}">Coter</a>
                         </div>
                     </li>
                 @endforeach
@@ -67,31 +67,31 @@
 
     </div>
 
-    <div>
-        <h2>
-            general evaluation : globale
-        </h2>
-        @if($meetings->count())
-        <ul>
-            @foreach( $event->students as $event->student )
-                <li class="jumbotron">
-                    {{ $event->student->name }}
-                    - general evaluation :
-                    @foreach( $meetingTableaus->where('student_id', $event->student->id) as $meetingTableau )
-                        <p>
-                            Cote :
-                            {{ $cote[$meetingTableau->id] = $meetingTableau->general_evaluation }}
-                        </p>
-                        <p>
-                            Commentaire :
-                            {{ $cote[$meetingTableau->id] = $meetingTableau->general_comment }}
-                        </p>
-                    @endforeach
-                </li>
-            @endforeach
-        </ul>
-        @else
-            <p>Il n'y a pas d'évaluation globale associées à cet évènement</p>
-        @endif
-    </div>
+    {{--<div>--}}
+        {{--<h2>--}}
+            {{--general evaluation : globale--}}
+        {{--</h2>--}}
+        {{--@if($meetings->count())--}}
+        {{--<ul>--}}
+            {{--@foreach( $event->students as $event->student )--}}
+                {{--<li class="jumbotron">--}}
+                    {{--{{ $event->student->name }}--}}
+                    {{--- general evaluation :--}}
+                    {{--@foreach( $meetingTableaus->where('student_id', $event->student->id) as $meetingTableau )--}}
+                        {{--<p>--}}
+                            {{--Cote :--}}
+                            {{--{{ $cote[$meetingTableau->id] = $meetingTableau->general_evaluation }}--}}
+                        {{--</p>--}}
+                        {{--<p>--}}
+                            {{--Commentaire :--}}
+                            {{--{{ $cote[$meetingTableau->id] = $meetingTableau->general_comment }}--}}
+                        {{--</p>--}}
+                    {{--@endforeach--}}
+                {{--</li>--}}
+            {{--@endforeach--}}
+        {{--</ul>--}}
+        {{--@else--}}
+            {{--<p>Il n'y a pas d'évaluation globale associées à cet évènement</p>--}}
+        {{--@endif--}}
+    {{--</div>--}}
 @endsection

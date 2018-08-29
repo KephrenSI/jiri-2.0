@@ -12,6 +12,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script>window.Laravel = { csrfToken: '{{ csrf_token() }}'}</script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -200,6 +201,6 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
+    {{--</div>--}}
 </body>
 </html>

@@ -1,22 +1,22 @@
 <?php
 
-namespace Jiri;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Jiri\Implementation
+ * App\Implementation
  *
- * @property-read \Jiri\Event $event
- * @property-read \Jiri\Project $project
- * @property-read \Illuminate\Database\Eloquent\Collection|\Jiri\Score[] $scores
- * @property-read \Jiri\Student $student
+ * @property-read \App\Event $event
+ * @property-read \App\Project $project
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Score[] $scores
+ * @property-read \App\Student $student
  * @method static bool|null forceDelete()
- * @method static \Illuminate\Database\Query\Builder|\Jiri\Implementation onlyTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Implementation onlyTrashed()
  * @method static bool|null restore()
- * @method static \Illuminate\Database\Query\Builder|\Jiri\Implementation withTrashed()
- * @method static \Illuminate\Database\Query\Builder|\Jiri\Implementation withoutTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Implementation withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Implementation withoutTrashed()
  * @mixin \Eloquent
  * @property int $id
  * @property \Carbon\Carbon|null $created_at
@@ -27,15 +27,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int $event_id
  * @property string|null $url_project
  * @property string|null $url_repo
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Implementation whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Implementation whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Implementation whereEventId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Implementation whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Implementation whereProjectId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Implementation whereStudentId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Implementation whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Implementation whereUrlProject($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Implementation whereUrlRepo($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Implementation whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Implementation whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Implementation whereEventId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Implementation whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Implementation whereProjectId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Implementation whereStudentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Implementation whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Implementation whereUrlProject($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Implementation whereUrlRepo($value)
  */
 class Implementation extends Model
 {
@@ -46,7 +46,11 @@ class Implementation extends Model
      * @var array
      */
     protected $fillable = [
-
+        'event_id',
+        'student_id',
+        'project_id',
+        'url_repo',
+        'url_project',
     ];
     protected $table = 'implementations';
 

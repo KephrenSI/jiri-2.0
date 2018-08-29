@@ -1,20 +1,20 @@
 <?php
 
-namespace Jiri;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Jiri\Score
+ * App\Score
  *
- * @property-read \Jiri\Implementation $implementation
- * @property-read \Jiri\Meeting $meeting
+ * @property-read \App\Implementation $implementation
+ * @property-read \App\Meeting $meeting
  * @method static bool|null forceDelete()
- * @method static \Illuminate\Database\Query\Builder|\Jiri\Score onlyTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Score onlyTrashed()
  * @method static bool|null restore()
- * @method static \Illuminate\Database\Query\Builder|\Jiri\Score withTrashed()
- * @method static \Illuminate\Database\Query\Builder|\Jiri\Score withoutTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Score withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Score withoutTrashed()
  * @mixin \Eloquent
  * @property int $id
  * @property \Carbon\Carbon|null $created_at
@@ -24,14 +24,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int $implementation_id
  * @property float|null $score
  * @property string|null $comment
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Score whereComment($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Score whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Score whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Score whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Score whereImplementationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Score whereMeetingId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Score whereScore($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Jiri\Score whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Score whereComment($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Score whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Score whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Score whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Score whereImplementationId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Score whereMeetingId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Score whereScore($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Score whereUpdatedAt($value)
  */
 class Score extends Model
 {
@@ -43,7 +43,9 @@ class Score extends Model
      */
     protected $fillable = [
         'score',
-        'comment'
+        'comment',
+        'meeting_id',
+        'implementation_id',
     ];
     protected $table = 'scores';
 
