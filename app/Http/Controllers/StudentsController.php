@@ -21,7 +21,6 @@ class StudentsController extends Controller
     {
         $students = Student::orderBy('name', 'ASC')->get();
         return view('students/index', compact('students'));
-
     }
 
     public function show(Student $student)
