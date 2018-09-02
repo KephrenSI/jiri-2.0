@@ -5,18 +5,20 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Connexion') }}</div>
+                <div class="card-header">
+                    <h2>{{ __('Connexion') }}</h2>
+                </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                    <form class="col s12" method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('Adresse Email') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">mail_outline</i>
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
+                                <label for="email" class="col-form-label">{{ __('Adresse Email') }}</label>
+                                <span class="helper-text" data-error="Veuillez remplir le champs correctement" data-success="Ok"></span>
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -26,11 +28,11 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Mot de passe') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">lock_outline</i>
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
+                                <label for="password" class="col-form-label">{{ __('Mot de passe') }}</label>
+                                <span class="helper-text" data-error="Veuillez remplir le champs correctement" data-success="Ok"></span>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -40,28 +42,32 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="input-field col s6">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
+                                    <i class="material-icons prefix"></i>
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Se souvenir de moi') }}
+                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                        <span>{{ __('Se souvenir de moi') }}</span>
                                     </label>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Se connecter') }}
-                                </button>
+                        <div class="form-group row">
+                            <div class="input-field col s6 text-right">
+                                <div class="text-right">
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                        {{ __('Se connecter') }}
+                                    </button>
+                                    <br>
+                                    <br>
+                                    <a class="btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Mot de passe oublié?') }}
+                                    </a>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Mot de passe oublié?') }}
-                                </a>
-
-                                <a class="btn btn-link" href="{{ route('register') }}">
+                                </div>
+                                <hr>
+                                <a class="btn-link" href="{{ route('register') }}">
                                     {{ __('Pas encore inscrit?') }}
                                 </a>
                             </div>

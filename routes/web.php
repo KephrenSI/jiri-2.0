@@ -27,9 +27,9 @@
 
 
 Route::get('/', function () {
-    //if(Auth::check())
-      //  return view('dashboard');
-    //else
+    if(Auth::check())
+        return view('home');
+    else
         return view('auth/login');
     //return view('welcome');
 });

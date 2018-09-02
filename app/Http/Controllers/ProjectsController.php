@@ -32,8 +32,20 @@ class ProjectsController extends Controller
 
     public function store(StoreProject $request)
     {
-        Project::create(request()->all());
+//        $v = Validator::make($request->all(), [
+//            'name' => 'required||min:3|max:32',
+//            'description' => 'required|max:120',
+//        ]);
+//
+//        if ($v->fails())
+//        {
+//          return redirect()->back()->withErrors($v->errors());
+//        }else{
+
+//        Project::create(request()->all());
         return redirect('/projects/index');
+//        }
+
     }
 
     public function edit(Project $project)

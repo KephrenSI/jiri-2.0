@@ -1,5 +1,0 @@
-<template>
-    <div>
-        <h2>Edit Student</h2>
-    </div>
-</template>

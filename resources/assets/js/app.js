@@ -5,9 +5,16 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+// load all dependencies
+
 require('./bootstrap');
 
+import axios from 'axios';
+import Datepicker from 'vuejs-datepicker';
+
 window.Vue = require('vue');
+window.axios = axios;
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,50 +22,25 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('navigation', require('./components/Navigation.vue'));
+// load all components
 
-Vue.component('create-event', require('./views/events/create.vue'));
-Vue.component('edit-event', require('./views/events/edit.vue'));
-Vue.component('index-event', require('./views/events/index.vue'));
-Vue.component('show-event', require('./views/events/show.vue'));
+Vue.component('index-student', require('./components/students/index.vue'));
 
-Vue.component('evaluate-implementation', require('./views/implementations/evaluate.vue'));
-Vue.component('link-implementation', require('./views/implementations/link.vue'));
 
-Vue.component('create-meeting', require('./views/meetings/create.vue'));
-Vue.component('edit-meeting', require('./views/meetings/edit.vue'));
-Vue.component('index-meeting', require('./views/meetings/index.vue'));
-Vue.component('link-meeting', require('./views/meetings/link.vue'));
-Vue.component('show-meeting', require('./views/meetings/show.vue'));
+// define new Vue instances
 
-Vue.component('create-project', require('./views/projects/create.vue'));
-Vue.component('edit-project', require('./views/projects/edit.vue'));
-Vue.component('index-project', require('./views/projects/index.vue'));
-Vue.component('manage-project', require('./views/projects/manage.vue'));
-Vue.component('show-project', require('./views/projects/show.vue'));
-
-Vue.component('create-student', require('./views/students/create.vue'));
-Vue.component('edit-student', require('./views/students/edit.vue'));
-Vue.component('index-student', require('./views/students/index.vue'));
-Vue.component('manage-student', require('./views/students/manage.vue'));
-Vue.component('show-student', require('./views/students/show.vue'));
-Vue.component('showImplementations-student', require('./views/students/showImplementations.vue'));
-
-Vue.component('create-user', require('./views/users/create.vue'));
-Vue.component('edit-user', require('./views/users/edit.vue'));
-Vue.component('index-user', require('./views/users/index.vue'));
-Vue.component('manage-user', require('./views/users/manage.vue'));
-Vue.component('show-user', require('./views/users/show.vue'));
-
-Vue.component('home', require('./views/home.vue'));
-
-const navigation = new Vue({
-    el: '#navigation',
+const app = new Vue({
+    el: '#app',
 });
 
-const home = new Vue({
-    el: '#home',
+const date_picker = new Vue({
+    el: '#date_picker',
+    components: {
+        Datepicker
+    },
+    data: {
+        date: new Date()
+    }
 });
 
 const indexStudent = new Vue({
