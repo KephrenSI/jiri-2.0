@@ -1,7 +1,21 @@
+<style>
+    .fullscreen_bg {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-image: url({{URL::asset('assets/img/john-schnobrich-520023-unsplash.jpg')}});
+        background-repeat:repeat;
+    }
+</style>
 @extends('layouts.app')
 
 @section('content')
-<div class="container" >
+<div id="fullscreen_bg" class="fullscreen_bg"></div>
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
