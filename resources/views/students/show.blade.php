@@ -10,40 +10,60 @@
                     </div>
                     <div class="card-body">
                         <p><strong>Email</strong> : {{$student->email}}</p>
-                        <a href="{{ url('/students/edit/'.$student->id) }}" class="btn btn-primary">Modifier</a>
-                        <form action="{{ url('/students/delete/'.$student->id) }}" method="post">
-                            {{ csrf_field() }}
-                            <input class="btn btn-danger" type="submit" value="Supprimer">
-                        </form>
-                        <div class="card">
-                            <div class="card-header">
+
+                        <div class="text-right">
+                            <a href="{{ url('/students/edit/'.$student->id) }}" class="btn btn-primary waves-effect waves-light">{{ __('Modifier') }}</a>
+                            <br>
+                            <br>
+                            <form action="{{ url('/students/delete/'.$student->id) }}" method="post">
+                                {{ csrf_field() }}
+                                <button type="submit" class="btn btn-danger waves-effect waves-light">
+                                    {{ __('Supprimer') }}
+                                </button>
+                            </form>
+                        </div>
+                        <div>
+                            <div>
                                 <h3>
-                                    Évènements auquels il participe
+                                    {{ __('Évènements auquels il participe') }}
                                 </h3>
                             </div>
-                            <div class="card-body">
-                                @if($student->meetings->count())
-                                    @foreach($participations as $participation)
-                                        <ul class="blog-post-title">
-                                            <li class="">
-                                                <a href="{{ url('/events/'.$participation->event->id) }}">
-                                                    {{ $participation->event->course_name }}
-                                                </a>
-                                            </li>
+                            <div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="row">
+                                        @if($student->meetings->count())
+                                            @foreach($participations as $participation)
+                                                <div class="col-md-4">
+                                                    <li class="card">
+                                                        <div class="card-header teal lighten-2">
+                                                            <h3 class="card-title white-text">{{ $participation->event->course_name }}</h3>
+                                                            <a class="btn-floating halfway-fab waves-effect waves-light blue tooltipped" data-position="left" data-tooltip="Voir l'évènement {{ $participation->event->course_name }}" href="{{ url('/events/'.$participation->event->id) }}"><i class="material-icons">add</i></a>
+                                                            <a class='dropdown-trigger white-text' href='#' data-target='dropdown1'><i class="material-icons right">more_vert</i></a>
+                                                        </div>
+                                                        <div class="card-content">
+                                                            <p class="card-text"><strong>Année académique : </strong>{{ $participation->event->academic_year }}</p>
+                                                            <p class="card-text"><strong>Session </strong>{{ $participation->event->exam_session}}</p>
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                                <br>
+                                            @endforeach
+                                        @else
+                                            Cet étudiant ne participe pas encore à un évènement
+                                        @endif
                                         </ul>
-                                    @endforeach
-                                @else
-                                    Cet étudiant ne participe pas encore à un évènement
-                                @endif
+                                        {{--<a href="{{ url('/events/restore') }}">restaurer</a>--}}
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
-
-                        <a href="{{ url('/students/index') }}" class="btn btn-default">
-                            Voir tous les étudiants
-                        </a>
-
                     </div>
+                </div>
+                <div>
+                    <a href="{{ url('/students/index') }}" class="btn btn-default waves-effect waves-light">
+                        Voir tous les étudiants
+                    </a>
                 </div>
             </div>
         </div>

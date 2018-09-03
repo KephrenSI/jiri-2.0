@@ -1,57 +1,58 @@
 @extends('layouts.app')
 
 @section('content')
-    <ul class="panel-body list-group">
-        @foreach ($students as $student)
-            <li class="list-group-item">
-                {{ $student->name }}
-                <ul>
-                    @foreach($student->implementations->where('event_id', $event->id) as $student->implementation)
-                        <li>
-                            {{ $student->implementation->project_id }}
-                            {{ $student->implementation->project->name }}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="blog-post-title">{{ __('Ajouter les url des étudiants') }}</h2>
+                    </div>
+                    <div class="card-body">
 
-                            {{ $student->implementation->url_repo }}
-                            {{ $student->implementation->url_project }}
-                            event id:
-                            {{ $student->implementation->event_id }}
+                        <ul class="panel-body list-group">
+                            @foreach ($students as $student)
+                                <li class="list-group-item">
+                                    <h3 class="">{{ $student->name }}</h3>
+                                    <ul class="collapsible">
+                                        @foreach($student->implementations->where('event_id', $event->id) as $student->implementation)
+                                            <li>
+                                                <h4 class="collapsible-header">{{ $student->implementation->project->name }}</h4>
+                                                <div class="collapsible-body">
+                                                    <form class="col s12" action="{{ route('/implementations/url', $student->implementation) }}" method="post">
+                                                        {{ csrf_field() }}
 
-                            <form action="{{ route('/implementations/url', $student->implementation) }}" method="post">
-                                {{ csrf_field() }}
-                                <div class="form-group">
-                                    <label for="url_repo">
-                                        url_repo
-                                    </label>
-                                    <input id="url_repo" type="text" class="form-control" value="{{ $student->implementation->url_repo }}" name="url_repo">
-                                </div>
-                                <div class="form-group">
-                                    <label for="url_project">
-                                        url_project
-                                    </label>
-                                    <input id="url_project" type="text" class="form-control" value="{{ $student->implementation->url_project }}" name="url_project">
-                                </div>
+                                                        <div class="form-group row">
+                                                            <div class="input-field col s6">
+                                                                <input id="url_repo" type="text" class="form-control" value="{{ $student->implementation->url_repo }}" name="url_repo">
+                                                                <label class="col-form-label" for="url_repo">url_repo</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="input-field col s6">
+                                                                <input id="url_project" type="text" class="form-control" value="{{ $student->implementation->url_project }}" name="url_project">
+                                                                <label class="col-form-label" for="url_project">url_project</label>
+                                                            </div>
+                                                        </div>
 
-                                @include('partials/errors')
+                                                        <div class="text-right">
+                                                            <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                                                {{ __('Enregistrer les url') }}
+                                                            </button>
+                                                        </div>
+                                                        @include('partials/errors')
+                                                    </form>
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                                <input type="submit" value="ajouter les urls" class="btn btn-primary">
-                            </form>
-                        </li>
-                    @endforeach
-
-                </ul>
-            </li>
-        @endforeach
-    </ul>
-
-    {{--<h1>--}}
-        {{--Tous les jurys dans la db--}}
-    {{--</h1>--}}
-    {{--<ul>--}}
-        {{--@foreach ($studentAlls as $studentAll)--}}
-            {{--<li>--}}
-                {{--{{ $studentAll->name }}--}}
-            {{--</li>--}}
-        {{--@endforeach--}}
-
-    {{--</ul>--}}
 @endsection

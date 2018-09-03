@@ -11,12 +11,12 @@
 
                 <div class="card-body">
                     <form class="col s12" method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
-                        @csrf
+                        {{ csrf_field() }}
 
                         <div class="form-group row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">mail_outline</i>
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" maxlength="30" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
                                 <label for="email" class="col-form-label">{{ __('Adresse Email') }}</label>
                                 <span class="helper-text" data-error="Veuillez remplir le champs correctement" data-success="Ok"></span>
                                 @if ($errors->has('email'))
@@ -30,7 +30,7 @@
                         <div class="form-group row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">lock_outline</i>
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                <input id="password"  minlength="6" maxlength="20"type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                                 <label for="password" class="col-form-label">{{ __('Mot de passe') }}</label>
                                 <span class="helper-text" data-error="Veuillez remplir le champs correctement" data-success="Ok"></span>
                                 @if ($errors->has('password'))

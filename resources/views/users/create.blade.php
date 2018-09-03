@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="blog-post-title">Ajouter un nouveau membre du jury</h2>
+                        <h2 class="blog-post-title">{{ __('Ajouter un nouveau membre du jury') }}</h2>
                     </div>
                     <div class="card-body">
                         <form class="col s12" action="{{ url('/users/store') }}" method="post">
@@ -15,20 +15,22 @@
                             <div class="form-group row">
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">perm_identity</i>
-                                    <input type="text" class="form-control" name="name" id="name" value="{{old('name')}}">
-                                    <label for="name">Nom</label>
+                                    <input  maxlength="30" minlength="3"  type="text" class="form-control" name="name" id="name" value="{{old('name')}}">
+                                    <label class="col-form-label" for="name">Nom</label>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="input-field col s6">
-                                    <input type="email" class="form-control" name="email" id="email" value="{{old('email')}}">
-                                    <label for="email">Email</label>
+                                    <i class="material-icons prefix">mail_outline</i>
+                                    <input  maxlength="30" minlength="3"  type="email" class="form-control" name="email" id="email" value="{{old('email')}}">
+                                    <label class="col-form-label" for="email">Email</label>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="input-field col s6">
-                                    <input type="password" class="form-control" name="password" id="password" value="{{old('password')}}">
-                                    <label for="password">Mot de passe</label>
+                                    <i class="material-icons prefix">lock_outline</i>
+                                    <input  maxlength="15" minlength="6" type="password" class="form-control" name="password" id="password" value="{{old('password')}}">
+                                    <label class="col-form-label" for="password">Mot de passe</label>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -36,7 +38,7 @@
                                     <!-- Switch -->
                                     <div class="switch">
                                         <i class="material-icons prefix">supervisor_account</i>
-                                        <label  for="is_admin" class="col-form-label">
+                                        <label class="col-form-label" for="is_admin" class="col-form-label">
                                             {{ __('Cet personne est elle administratrice?') }}
                                             <hr>
                                             Non
@@ -50,11 +52,16 @@
                             </div>
                             <div class="form-group row">
                                 <div class="input-field col s6">
-                                    <input type="text" class="form-control" name="company" id="company" value="{{old('company')}}">
-                                    <label for="company">Agence</label>
+                                    <i class="material-icons prefix">local_cafe</i>
+                                    <input  maxlength="15" minlength="3" type="text" class="form-control" name="company" id="company" value="{{old('company')}}">
+                                    <label class="col-form-label" for="company">Agence</label class="col-form-label">
                                 </div>
                             </div>
-                            <input class="btn btn-primary" type="submit" value="Enregistrer">
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                    {{ __('Enregistrer') }}
+                                </button>
+                            </div>
                             @include('partials/errors')
                         </form>
                     </div>

@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="blog-post-title">Ajouter un nouveau projet</h2>
+                        <h2 class="blog-post-title">{{ __('Ajouter un nouveau projet') }}</h2>
                     </div>
                     <div class="card-body">
                         <form class="col s12" action="{{ url('/projects/store') }}" method="post">
@@ -14,19 +14,23 @@
 
                             <div class="form-group row">
                                 <div class="input-field col s6">
-                                    <i class="material-icons prefix">person_outline</i>
-                                    <label for="name">Nom</label>
-                                    <input type="text" class="form-control" name="name" id="name" value="{{old('name')}}">
+                                    <i class="material-icons prefix">laptop_mac</i>
+                                    <input type="text" class="form-control"  maxlength="15" minlength="3"  name="name" id="name" value="{{old('name')}}">
+                                    <label class="col-form-label" for="name">Nom</label>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="input-field col s6">
-                                    <i class="material-icons prefix">mail_outline</i>
-                                    <label for="description">Quelques mots</label>
-                                    <textarea class="form-control materialize-textarea" data-length="120" name="description" id="description">{{old('description')}}</textarea>
+                                    <i class="material-icons prefix">speaker_notes</i>
+                                    <textarea  maxlength="120" class="form-control materialize-textarea" data-length="120" name="description" id="description">{{old('description')}}</textarea>
+                                    <label class="col-form-label" for="description">Quelques mots</label>
                                 </div>
                             </div>
-                            <input class="btn btn-primary" type="submit" value="Enregistrer">
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                    {{ __('Enregistrer') }}
+                                </button>
+                            </div>
                             @include('partials/errors')
                         </form>
                     </div>
@@ -34,6 +38,4 @@
             </div>
         </div>
     </div>
-
-
 @endsection
